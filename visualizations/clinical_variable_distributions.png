@@ -1,0 +1,12 @@
+categorical_clinical_cols = ['sex', 'cp', 'fbs', 'restecg', 'exang', 'slope', 'ca', 'thal']
+
+plt.figure(figsize=(18, 20))
+for i, col in enumerate(categorical_clinical_cols):
+    plt.subplot(4, 2, i + 1)
+    sns.countplot(x=col, hue='target', data=df, palette='viridis')
+    plt.title(f'Distribution of {col} by Heart Disease Status')
+    plt.xlabel(col)
+    plt.ylabel('Count')
+    plt.legend(title='Heart Disease', labels=['No', 'Yes'])
+plt.tight_layout()
+plt.show()
