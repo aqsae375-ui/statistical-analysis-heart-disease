@@ -1,0 +1,7 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.violinplot(x='target', y='age', data=df)
+plt.xticks([0,1], ['No Heart Disease', 'Heart Disease'])
+plt.title('Age Distribution by Heart Disease Status')
+plt.show()
